@@ -28,7 +28,7 @@ public class Ficheros {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return hashMapPaginas; // Retornamos el HashMap de p·ginas
+        return hashMapPaginas; // Retornamos el HashMap de p√°ginas
     }
     
     public ArrayList<String> guardarUrlLista(){
@@ -54,7 +54,6 @@ public class Ficheros {
                 String[] partes = linea.split(" >+ | #+"); // Separar por los delimitadores
                 int index = Integer.parseInt(partes[0].trim());
 
-                // Crear una lista para los enlaces
                 ArrayList<Integer> enlaces = new ArrayList<>();
                 for (int i = 1; i < partes.length; i++) {
                     if (!partes[i].trim().isEmpty()) {
@@ -103,13 +102,12 @@ public class Ficheros {
             for (HashMap.Entry<Integer, String> entry : paginas.entrySet()) {
                 writer.write(entry.getKey() + " ::: " + entry.getValue() + "\n");
             }
-            System.out.println("El HashMap de URLs se ha guardado en el archivo con Èxito.");
+            System.out.println("El HashMap de URLs se ha guardado en el archivo con √©xito.");
         } catch (IOException e) {
             System.out.println("Error al guardar el archivo de URLs: " + e.getMessage());
         }
     }
 
-    // MÈtodo para guardar el HashMap de enlaces en un archivo
     public void guardarEnlacesEnArchivo(HashMap<Integer, ArrayList<Integer>> enlacesPaginas) {
         String rutaEscritura = "C:/Users/peiol/eclipse-workspace/EntregaEDA/src/datuak-2024-2025/datosCreados/hasMapEnlaces";  // Ajustar con la ruta real del archivo
         
@@ -117,7 +115,7 @@ public class Ficheros {
             for (HashMap.Entry<Integer, ArrayList<Integer>> entry : enlacesPaginas.entrySet()) {
                 writer.write(entry.getKey() + " >>>> " + entry.getValue().toString().replaceAll("[\\[\\],]", "") + "\n");
             }
-            System.out.println("El HashMap de enlaces se ha guardado en el archivo con Èxito.");
+            System.out.println("El HashMap de enlaces se ha guardado en el archivo con √©xito.");
         } catch (IOException e) {
             System.out.println("Error al guardar el archivo de enlaces: " + e.getMessage());
         }
@@ -127,11 +125,10 @@ public class Ficheros {
         String rutaEscritura = "C:/Users/peiol/eclipse-workspace/EntregaEDA/src/datuak-2024-2025/datosCreados/listaOrdenada";  // Ajustar con la ruta real del archivo
         
         try (FileWriter writer = new FileWriter(rutaEscritura)) {
-            // Recorrer la lista de URLs
             for (String url : listaUrl) {
-                writer.write(url + "\n");  // Escribir cada URL en una lÌnea nueva
+                writer.write(url + "\n");  // Escribir cada URL en una l√≠nea nueva
             }
-            System.out.println("La lista de URLs se ha guardado en el archivo con Èxito.");
+            System.out.println("La lista de URLs se ha guardado en el archivo con √©xito.");
         } catch (IOException e) {
             System.out.println("Error al guardar la lista de URLs: " + e.getMessage());
         }
