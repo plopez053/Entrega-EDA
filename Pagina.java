@@ -11,7 +11,11 @@ public class Pagina {
     public Pagina(int pIndex, String pUrl, ArrayList<Integer> pEnlaces) {
         this.index = pIndex;
         this.url = pUrl;
-        this.enlaces = pEnlaces != null ? pEnlaces : new ArrayList<>();
+       if (pEnlaces != null) {
+    this.enlaces = pEnlaces;
+} else {
+    this.enlaces = new ArrayList<>();
+}
     }
 
     public int getIndex() {
